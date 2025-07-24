@@ -1,7 +1,5 @@
 # Principles of Self-Sovereign Identity
 
-The definitions of principles from the 18 studies are presented below. Each definition has been directly extracted from the original papers to provide an accurate representation of the principle as described by the authors.
-
 | Property | Definition |
 |----------|----------|
 | Existence and Representation | - A self-sovereign identity must enable a user to encode her characteristics digitally to assert her existence in the digital domain. This essentially is a quasi-representation of one’s self in digital form.[^ferdous] <br>- Users must have an independent existence.[^sheldrake][^stokkink] They should be able to create as many identities as required without the intervention of a third party.[^cucko]<br>- Users must have an independent existence. Any self-sovereign identity is ultimately based on the ineffable “I” that’s at the heart of identity. It can never exist wholly in digital form. This must be the kernel of self that is upheld and supported. A self-sovereign identity simply makes public and accessible some limited aspects of the “I” that already exists.[^allen]<br>- An SSI ecosystem shall provide the means for any entity - human, legal, natural, physical or digital - to be represented by any number of digital identities.[^toip][^sovrin]<br>- Prioritizing the existence of a person over the digital representation of their identities, ensuring independence.[^pava] |
