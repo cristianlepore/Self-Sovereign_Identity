@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabella SSI</title>
+    <style>
+        table {
+            font-size: 10px;
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            width: 60px;
+        }
+        th {
+            background-color: #d4f7d4;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 2; /* Keeps header on top of regular cells */
+        }
+        td:first-child, th:first-child {
+            position: sticky;
+            left: 0;
+            background-color: #d4f7d4; /* Light green for the first column */
+            z-index: 1; /* Keeps first column above regular cells */
+            box-shadow: 2px 0 0 #ddd; /* Adds a visible left border effect */
+        }
+        thead th:first-child {
+            z-index: 3; /* Highest z-index for the top-left corner cell */
+        }
+        tr:nth-child(even) td:not(:first-child) {
+            background-color: #f0f0f0; /* Light gray for alternate rows */
+        }
+        tbody tr td:first-child {
+            font-weight: bold;
+        }
+        td.check {
+        background-color: lightblue !important;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Principles</th>
+                <th>Tobin and Reed [1]</a></th>
+                <th>Andrieu et al. [2]</th>
+                <th>Ferdous et al. [3]</th>
+                <th>Mühle et al. [4]</th>
+                <th>Gilani et al. [5]</th>
+                <th>Naik and Jenkins [6]</th>
+                <th>Sheldrake [7]</th>
+                <th>Toth and Kalman [8]</th>
+                <th>eSSIF-Lab [9]</th>
+                <th>ToIP [10]</th>
+                <th>Sovrin [11]</th>
+                <th>BkThDVr [12]</th>
+                <th>Glöckler et al. [13]</th>
+                <th>Pava-Díaz et al. [14]</th>
+                <th>Satybaldy et al. [15]</th>
+                <th>Stokkink and Pouwelse [16]</th>
+                <th>Čučko et al. [17]</th>
+                <th>Allen [18]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Existence and represenation</td>
+                <td class="check">Controllability</td>
+                <td></td>
+                <td class="check">Foundational</td>
+                <td class="check">Controllability</td>
+                <td class="check">Foundational</td>
+                <td></td>
+                <td class="check">Foundational</td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Agency</td>
+                <td class="check">Personal Data</td>
+                <td></td>
+                <td class="check">Controllability</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Controllability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Ownership and control</td>
+                <td class="check">Controllability</td>
+                <td></td>
+                <td class="check">Foundational</td>
+                <td class="check">Controllability</td>
+                <td class="check">Foundation</td>
+                <td class="check">✔</td>
+                <td class="check">Foundational</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">Control</td>
+                <td class="check">User</td> 
+                <td class="check">Controllability</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Controllability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Access and availability</td>
+                <td class="check">Portability</td>
+                <td></td>
+                <td class="check">Foundational, Security</td>
+                <td class="check">Portability</td>
+                <td class="check">Foundational, Security</td>
+                <td class="check">✔</td>
+                <td class="check">Foundational</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Agency</td>
+                <td class="check">Control</td>
+                <td class="check">Operability</td>
+                <td class="check">Portability</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Usability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Transparency</td>
+                <td class="check">Portability</td>
+                <td></td>
+                <td class="check">Sustainability</td>
+                <td class="check">Portability</td>
+                <td class="check">Sustainability</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Security</td>
+                <td class="check">Usability</td>
+                <td></td>
+                <td class="check">Portability</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Adoption, Sustainability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Persistence</td>
+                <td class="check">Security, Controllability</td>
+                <td></td>
+                <td class="check">Security</td>
+                <td class="check">Security</td>
+                <td class="check">Security</td>
+                <td class="check">✔</td>
+                <td class="check">Foundational</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">Personal Data</td>
+                <td></td>
+                <td class="check">Security</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Adoption, Sustainability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Portability</td>
+                <td class="check">Portability</td>
+                <td></td>
+                <td class="check">Flexibility</td>
+                <td></td>
+                <td class="check">Flexibility</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Autonomy</td>
+                <td class="check">Personal Data</td>
+                <td class="check">Technology</td>
+                <td class="check">Portability</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Adoption, Sustainability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Interoperability</td>
+                <td class="check">Portability</td>
+                <td></td>
+                <td class="check">Flexibility</td>
+                <td class="check">Portability</td>
+                <td class="check">Flexibility</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Autonomy</td>
+                <td class="check">Usability</td>
+                <td class="check">Technology, Compliance</td>
+                <td class="check">Portability</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Adoption, Sustainability</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Consent</td>
+                <td class="check">Controllability</td>
+                <td class="check">Control</td>
+                <td class="check">Controllability</td>
+                <td class="check">Controllability</td>
+                <td class="check">Foundation</td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Autonomy</td>
+                <td class="check">Personal Data</td>
+                <td></td>
+                <td class="check">Controllability</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Privacy</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Security and protection</td>
+                <td class="check">Security</td>
+                <td></td>
+                <td class="check">Security</td>
+                <td class="check">Security</td>
+                <td class="check">Security</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Security</td>
+                <td class="check">Personal Data</td>
+                <td class="check">Security Compliance</td>
+                <td class="check">Security</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Security</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Privacy and minimal disclosure</td>
+                <td class="check">Security</td>
+                <td class="check">Control</td>
+                <td class="check">Flexibility Controllability</td>
+                <td class="check">Security</td>
+                <td class="check">Flexibility Foundational</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Security</td>
+                <td class="check">Personal Data</td>
+                <td class="check">User</td>
+                <td class="check">Security</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">Privacy</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Standard</td>
+                <td></td>
+                <td class="check">Acceptance</td>
+                <td class="check">Sustainability</td>
+                <td></td>
+                <td class="check">Sustainability</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">Technology</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">Adoption, Sustainability</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td></td>
+                <td class="check">Zero-cost</td>
+                <td class="check">Sustainability</td>
+                <td></td>
+                <td class="check">Sustainability</td>
+                <td class="check">✔</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">Operability</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">Adoption, Sustainability</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Decentralization and Autonomy</td>
+                <td></td>
+                <td></td>
+                <td class="check">Foundational</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">Autonomy</td>
+                <td></td>
+                <td class="check">Operability</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">Controllability</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Verifiability and Authenticity</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td></td>
+                <td class="check">Security</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td class="check">Security</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Usability and consistency</td>
+                <td></td>
+                <td class="check">Control</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td></td>
+                <td class="check">Agency</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="check">✔</td>
+                <td></td>
+                <td class="check">Usability</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+<h1>References</h1>
+
+<div>
+<p>
+1. Tobin, Andrew, and Drummond Reed. "The inevitable rise of self-sovereign identity." The Sovrin Foundation 29.2016 (2016): 18. <br>
+
+2. Andrieu, Joe. "A technology-free definition of self-sovereign identity." Proc. 3rd Rebooting Web Trust Design Workshop. 2016. <br>
+
+3. Ferdous, Md Sadek, Farida Chowdhury, and Madini O. Alassafi. "In search of self-sovereign identity leveraging blockchain technology." IEEE access 7 (2019): 103059-103079. <br>
+
+4. Mühle, Alexander, et al. "A survey on essential components of a self-sovereign identity." Computer Science Review 30 (2018): 80-86. <br>
+
+5. Gilani, Komal, et al. "A survey on blockchain-based identity management and decentralized privacy for personal data." 2020 2nd Conference on Blockchain Research & Applications for Innovative Networks and Services (BRAINS). IEEE, 2020. <br>
+
+6. Naik, Nitin, and Paul Jenkins. "Self-sovereign identity specifications: Govern your identity through your digital wallet using blockchain technology." 2020 8th IEEE International Conference on Mobile Cloud Computing, Services, and Engineering (MobileCloud). IEEE, 2020. <br>
+
+7. Sheldrake, Philip. "Generative identity—beyond self-sovereignty." 2019, <br>
+
+8. Toth, Kalman C., and Alan Anderson-Priddy. "Self-sovereign digital identity: A paradigm shift for identity." IEEE Security & Privacy 17.3 (2019): 17-27. <br>
+
+9. ESSIF-Lab. Essif-lab principles. https://essif-lab.github.io/framework/docs/essifLab-principles, 2024. Accessed: 2024-12-
+24. <br>
+
+10. Trust Over IP Foundation. Principles of self-sovereign identity (ssi). https://trustoverip.org/wp-content/uploads/2021/10/
+ToIP-Principles-of-SSI.pdf, 2024. Accessed: 2024-12-24 <br>
+
+11. Sovrin Foundation. Principles of self-sovereign identity (ssi). https://sovrin.org/principles-of-ssi/, 2024. Accessed: 2024-12-2 <br>
+
+12. BlockTechDiVer - Potential of blockchain technology for digital consumer participation. <br>
+
+13. Glöckler, Jana, et al. "A systematic review of identity and access management requirements in enterprises and potential contributions of self-sovereign identity." Business & Information Systems Engineering 66.4 (2024): 421-440. <br>
+
+14. Pava-Díaz, Roberto A., Jesús Gil-Ruiz, and Danilo A. López-Sarmiento. "Self-sovereign identity on the blockchain: contextual analysis and quantification of SSI principles implementation." Frontiers in Blockchain 7 (2024): 1443362. <br>
+
+15. Satybaldy, Abylay, Mariusz Nowostawski, and Jørgen Ellingsen. "Self-sovereign identity systems: Evaluation framework." Privacy and Identity Management. Data for Better Living: AI and Privacy: 14th IFIP WG 9.2, 9.6/11.7, 11.6/SIG 9.2. 2 International Summer School, Windisch, Switzerland, August 19–23, 2019, Revised Selected Papers 14 (2020): 447-461. <br>
+
+16. Stokkink, Quinten, and Johan Pouwelse. "Deployment of a blockchain-based self-sovereign identity." 2018 IEEE international conference on Internet of Things (iThings) and IEEE green computing and communications (GreenCom) and IEEE cyber, physical and social computing (CPSCom) and IEEE smart data (SmartData). IEEE, 2018. <br>
+
+17. Čučko, Špela, et al. "Towards the classification of self-sovereign identity properties." IEEE access 10 (2022): 88306-88329. <br>
+
+18. Allen, Christopher. "The path to self-sovereign identity." Life with Alacrity (2016).
+
+</p>
+</div>
