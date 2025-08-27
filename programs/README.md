@@ -1,4 +1,4 @@
-# Dependencies Map
+# Dependencies Map of API/CALL
 
 - **istogram_principles_background.py**
   - ax, np, plt
