@@ -1,0 +1,64 @@
+# Dependencies Map of API/CALL
+
+- **istogram_principles_background.py**
+  - ax, np, plt
+- **Script.py**
+  - URIRef, ax, get_ontology, np, plt, rdf_graph, sync_reasoner
+- **Confusion_matrix.py**
+  - np, plt
+- **silhouette.py**
+  - np
+- **Similarity_distribution.py**
+  - np, plt
+- **Graph_theory.py**
+  - plt
+- **Matrix.py**
+  - plt
+- **BubbleChart.py**
+  - ax, np, plt
+- **CategoryFrequency.py**
+  - plt
+- **Distribution_of_Authors_Contributions.py**
+  - np, plt
+- **Distribution_of_Principles_and_Articles_Occurrences_by_Category.py**
+  - np, plt
+- **Heatmap.py**
+  - plt
+- **Clustering.py**
+  - ax, plt
+- **Entropy.py**
+  - np, plt
+- **Euclidean_distance.py**
+  - np, plt
+- **Flowchart_principles.py**
+  - ax, np, plt
+- **Flowchat_principlesOLD.py**
+  - ax, np, plt
+- **Groups_per_value_k.py**
+  - ax, plt
+- **Number_principles_changing_group.py**
+  - ax, np, plt
+- **Principles_change_group.py**
+  - ax, plt
+- **Principles_workflow_groups.py**
+  - ax, plt
+- **tSNE.py**
+  - plt
+- **Distribution_of_principles.py**
+  - np, plt
+- **LoF.py**
+  - np
+- **Normal_distribution.py**
+  - np, plt
+- **Occurrences_principles.py**
+  - np, plt
+- **Principles_recording_all.py**
+  - ax, plt
+- **Principles_selection_table.py**
+  - ax, plt
+- **TSNE.py**
+  - np, plt
+- **Questions.py**
+  - ax, plt
+- **Results.py**
+  - ax, np, plt
