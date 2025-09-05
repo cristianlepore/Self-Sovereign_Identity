@@ -23,7 +23,7 @@
 | **Objective (Why)**         | Maximize **flexibility, interoperability, and innovation** by allowing many different applications and many different transports to interoperate through a single common layer.                                                                  |
 | **Mechanism (How)**         | Minimize the **intersection point** to a single *“spanning layer”* (e.g., IP for the Internet, ToIP Layer for identity) → stability in the middle, variety above and below.                                                                        |
 | **Conditions (Where/When)** | Multilayer architectures where balancing **core stability** with **peripheral innovation** is important.                                                                                                                                           |
-| **Kernel Theories (KT)**    | **KT1: Hourglass Model of the Internet** – Clark, Braden, Cerf et al. (1988–1991) → IP as the universal narrow waist.<br> **KT2: Spanning Layer Theory** – David D. Clark (2002, *Design of the Internet Hourglass*) → a minimal universal layer enables evolution above and below.<br> **KT3: Modularity & Design Rules** – Baldwin & Clark (2000, *Design Rules*) → modularity with stable interfaces at the center fosters asymmetric evolution. |
+| **Kernel Theories (KT)**    | **KT1: Modularity & Design Rules** – Baldwin & Clark (2000, *Design Rules*) → modularity with stable interfaces at the center fosters asymmetric evolution. |
 | **How obtained**            | 1. Identified the key concept: **hourglass architecture with a single spanning layer**.<br> 2. Linked to the Internet’s original model (IP as unique layer).<br> 3. Reinforced with modularity and design rules for managing complexity and innovation. |
 
 ---
@@ -53,7 +53,7 @@
 | **Objective (Why)**         | Ensure **trust and mass adoption** by removing cognitive/technical barriers: users should not need to become security experts to be protected.                                |
 | **Mechanism (How)**         | Protocols implement **security by design** (end-to-end encryption, forward secrecy, privacy by default). No opt-in required.                                                   |
 | **Conditions (Where/When)** | Distributed environments, global networks, digital identity systems where users are heterogeneous and cannot be responsible for their own security.                            |
-| **Kernel Theories (KT)**    | **KT1: End-to-End Encryption Theory** – Saltzer, Reed & Clark (1984).<br> **KT2: Usable Security Theory** – Whitten & Tygar (1999).<br> **KT3: Privacy by Design** – Cavoukian (2009). |
+| **Kernel Theories (KT)**    | **KT1: Privacy by Design** – Cavoukian (2009). |
 | **How obtained**            | 1. Key concept: **security/privacy must be automatic, not require effort**.<br> 2. Technical root: end-to-end.<br> 3. Human root: usable security.<br> 4. Organizational principle: privacy by design. |
 
 
@@ -66,7 +66,7 @@
 | **Objective (Why)**         | Reduce **compromise risks** and eliminate **single points of failure** on intermediate nodes.                                                                                                   |
 | **Mechanism (How)**         | Store private keys only in the user’s secure devices (HSM, secure enclave, local wallets).                                                                                                      |
 | **Conditions (Where/When)** | Digital identity, blockchain, and distributed networks where trust depends on protecting private keys.                                                                                          |
-| **Kernel Theories (KT)**    | **KT1: Principle of Least Authority (POLA)** – Lampson (1974, *Protection*) → private keys must remain accessible only to their owner.<br> **KT2: Security of Key Management** – Diffie & Hellman (1976), RSA (1978) → the strength of cryptography depends on the inviolability of private keys.<br> **KT3: Self-Sovereign Identity (SSI) Principle** – Allen (2016, *The Path to SSI*) → personal custody of private keys is the foundation of digital sovereignty. |
+| **Kernel Theories (KT)**    | **KT1: Principle of Least Authority (POLA)** – Lampson (1974, *Protection*) → private keys must remain accessible only to their owner.<br> **KT2: Security of Key Management** – Diffie & Hellman (1976), RSA (1978) → the strength of cryptography depends on the inviolability of private keys.<br> **KT3: Self-Sovereign Identity (SSI) Principle** – Mühle et al. (2018, A Survey on Essential Components of SSI), Liu et al. (2021) |
 | **How obtained**            | 1. Isolated the key concept: **decentralized private keys stored at the edges**.<br> 2. Linked to classical theoretical bases (end-to-end, POLA, key management).<br> 3. Integrated with contemporary support from SSI. |
 
 ---
@@ -76,8 +76,8 @@
 | **Objective (Why)**         | Define the nature of trust as the basis for decision-making under risk.                                                                         |
 | **Mechanism (How)**         | Trust functions as a **psychological belief** that guides individuals and groups in their risk-taking choices.                                  |
 | **Conditions (Where/When)** | Contexts of social, organizational, and technological interaction where certainty is absent and decisions must be made despite uncertainty/vulnerability. |
-| **Kernel Theories (KT)**    | **KT1: Trust as Risk-Based Decision-Making** – Rousseau et al. (1998); Hardin (2002) → trust involves accepting vulnerability based on perceptions of others’ intentions/competence.<br> |
-| **How obtained**            | 1. Isolated the **purpose** (trust = basis of risk decisions).<br> 2. Linked to classical literature (Rotter, Mayer, Rousseau, Hardin).<br> 3. Selected only the essential digital extensions (Riegelsberger, McKnight). |
+| **Kernel Theories (KT)**    | |
+| **How obtained**            | |
 
 *****************************************
 *****************************************
@@ -88,7 +88,7 @@
 | **Objective (Why)**         | Define trust as a contextual and relational phenomenon, not merely an internal psychological state.                                                                   |
 | **Mechanism (How)**         | Trust occurs when a **subject (individual or group)** evaluates an **object (person, institution, system, technology, information, etc.)** in order to make decisions. |
 | **Conditions (Where/When)** | Complex socio-technical contexts in which people must decide whether or not to rely on different objects (e.g., platforms, protocols, smart contracts, authorities).   |
-| **Kernel Theories (KT)**    | **KT1: Relational Theory of Trust** – Hardin (2002, *Trust and Trustworthiness*) → trust as a relational concept: *“A trusts B to do X”*.<br> **KT2: Trust in Online Systems** – McKnight, Choudhury & Kacmar (2002); McKnight & Chervany (2010) → trust in digital environments studied as a subject–object relationship (user ↔ system/platform).<br> **KT3: Trust in Human–Technology Interaction** – Lee & See (2004, *Trust in Automation*); Glikson & Woolley (2020, *Human Trust in Artificial Intelligence*) → trust analyzed as a relationship between humans and technological objects (automation, AI). |
+| **Kernel Theories (KT)**    | **KT1: Relational Theory of Trust** – Hardin (2002, *Trust and Trustworthiness*) → trust as a relational concept: *“A trusts B to do X”*.<br> **KT2: Trust in Online Systems** – McKnight, Choudhury & Kacmar (2002); Krul et al. (2023); McKnight & Chervany (2010) → trust in digital environments studied as a subject–object relationship (user ↔ system/platform).<br> **KT3: Trust in Human–Technology Interaction** – Lee & See (2004, *Trust in Automation*); Glikson & Woolley (2020, *Human Trust in Artificial Intelligence*) → trust analyzed as a relationship between humans and technological objects (automation, AI); Satybaldy, Ferdous & Nowostawski (2021). |
 | **How obtained**            | 1. Isolated the focus: **trust = subject–object relationship**.<br> 2. Selected foundational references: Hardin (triadic theory), McKnight (online trust), Lee & See / Glikson & Woolley (human–technology trust). |
 
 ---
@@ -98,8 +98,8 @@
 | **Objective (Why)**         | Clarify that trust is directional and not automatically reciprocal.                                                                                 |
 | **Mechanism (How)**         | Distinguish the directions of trust (A→B ≠ B→A), even when a bi-directional relationship exists.                                                    |
 | **Conditions (Where/When)** | Social and digital interactions, where actors may have different levels or motivations of reciprocal trust.                                         |
-| **Kernel Theories (KT)**    | **KT1: Directionality of Trust in Sociology** – Luhmann (1979, *Trust and Power*) → trust is a unilateral act that reduces complexity.<br> **KT2: Digital Trust Models** – Blaze, Feigenbaum & Lacy (1996, *Decentralized Trust Management*) → trust in distributed systems is modeled as a directional, non-symmetric relationship between entities. |
-| **How obtained**            | 1. Isolated the focus: **directional, non-symmetric trust**.<br> 2. Linked sociological and psychological bases (Luhmann, Deutsch).<br> 3. Integrated computer science foundations (Blaze et al.) formalizing directionality in digital systems. |
+| **Kernel Theories (KT)**    |  |
+| **How obtained**            |  |
 
 ---
 
@@ -118,7 +118,7 @@
 | **Objective (Why)**         | Model trust as a **continuous decision-making process** balancing risk and reward.                                                                            |
 | **Mechanism (How)**         | Individuals continuously assess risks and benefits → trust emerges when perceived reward exceeds perceived risk, up to a threshold beyond which trust is no longer rational. |
 | **Conditions (Where/When)** | Individual and collective decision-making processes, especially under uncertainty or vulnerability (e.g., cybersecurity, financial choices, adoption of new technologies). |
-| **Kernel Theories (KT)**    | **KT1: Organizational Trust** – Mayer, Davis & Schoorman (1995) *Integrative Model of Organizational Trust*: trust manifests as *risk taking in relationship* when perceived benefit exceeds risk.<br> **KT2: Trust-Risk Model** Pavlou (2003) – Trust as reduction of risk perception in e-commerce decisions. |
+| **Kernel Theories (KT)**    | **KT1: Trust-Risk Model** Pavlou (2003) – Trust as reduction of risk perception in e-commerce decisions. |
 | **How obtained**            | 1. Isolated the key concept: **trust as a decision-making continuum with threshold**.<br> 2. Selected core theories (Deutsch, Mayer et al., Prospect Theory).<br> 3. Added confirmations on risk perception (Slovic) and digital applications (Pavlou). |
 
 *****************************************
@@ -131,7 +131,7 @@
 | **Objective (Why)**         | Formalize the **indirect transmission of trust**: if A→B and B→C, then A can derive some degree of trust in C.                                                                         |
 | **Mechanism (How)**         | Trust can propagate along relational chains, but in a **conditional and attenuated** way (not full equivalence, but a “degree of trust”).                                               |
 | **Conditions (Where/When)** | Social networks, digital ecosystems, reputation systems, and distributed identity frameworks, where trust is not limited to direct relationships.                                        |
-| **Kernel Theories (KT)**    | **KT1: Marsh (1994)** – *Formalising Trust as a Computational Concept*: first mathematical model of trust, including **conditional transitivity**.<br><br> **KT2: Jøsang, Hayward & Pope (2006)** – *Trust Network Analysis with Subjective Logic*: formalizes **trust propagation** in social networks through subjective logic.<br> |
+| **Kernel Theories (KT)**    | **KT1: Marsh (1994)** – *Formalising Trust as a Computational Concept*: first mathematical model of trust, including **conditional transitivity**.<br><br> |
 | **How obtained**            | 1. Isolated the key concept: **conditional transitivity of trust**.<br>2. Included Marsh (foundational model) and Jøsang (computational formalization).<br>3. Added Mui (reputation systems) and Sherchan (contemporary synthesis) as empirical and theoretical validations in digital contexts. |
 
 ---
