@@ -89,25 +89,26 @@ These are used to **test and compare** systems within the semantic evaluation mo
 
 ### 🧮 Analytical and Computational Tools
 
-#### 7. Semantic Value Ontology (SVO) — Python Scripts
-**Path:** [`/`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main)
+#### 7. Subject–Verb–Object (SVO) — Python Scripts
+**Path:** [`/nlp/BERT.py`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/nlp/BERT.py)
 
-Python scripts implementing the **Semantic Value Ontology (SVO)**, which links architectural components to normative values.  
+Python scripts implementing the **Subject–Verb–Object (SVO)**, wich extracts basic elements.
 Used to generate ontology instances and map principles to entities.
 
-#### 8. Clustering and Dimensionality Reduction
-**Path:** [`/`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main)
+#### 8. Clustering Techniques
+**Path:** [`/clustering`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/clustering)
 
 Scripts for:
 - **K-Means clustering**
-- **t-SNE dimensionality reduction**
+- **Louvain**
+- **Greedy**
 
 Used to identify conceptual clusters of SSI principles, as described in **Appendix B** of the thesis.
 
 #### 9. SPARQL Queries
 **File:** [`queries/sparql.py`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/queries/sparql.py)
 
-Contains **SPARQL queries** used in the *Principle Engine* to extract, compare, and score relationships between principles, indicators, and system components.
+Contains **SPARQL queries** used in the *Principle Engine* to extract and score relationships between principles, indicators, and system components.
 
 ---
 
