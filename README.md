@@ -2,7 +2,7 @@
 
 **Author:** Cristian Lepore  
 **Affiliation:** Université de Toulouse, IRIT Laboratory  
-**Thesis:** *A Semantic Framework for Defining and Assessing e-Identity Management Ecosystems Based on Self-Sovereign Identity Principles* (Ph.D., 2025)  
+**Thesis:** *A Semantic Framework for Defining and Assessing e-Identity Management Ecosystems Based on Self-Sovereign Identity Principles* (Ph.D. Candidate, 2025)  
 
 ---
 
@@ -20,7 +20,7 @@ All materials are structured to ensure **transparency**, **reproducibility**, an
 ### 🧩 Theoretical Foundations
 
 #### 1. Kernel Theories (KT)
-**File:** [`Kernel_Theories/kernel_theories.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/Kernel_Theories/kernel_theories.md)
+**File:** [`Kernel_Theories/kernel_theories.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/kernel_theories/kernel_theories.md)
 
 Contains the **foundational theories** supporting the semantic and evaluative framework.  
 Each Kernel Theory corresponds to one or more **Design Principles (DP)** from the ToIP and SSI paradigms.
@@ -66,7 +66,7 @@ Validated and consolidated list of principles used in the evaluation of **case s
 ### 🧠 Ontologies
 
 #### 5. Reference Ontology (ToIP)
-**Path:** [`/ontologie/toip`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/ontologie/toip)
+**Path:** [`/ontologie/toip`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/ontologies/toip)
 
 This folder contains the **Sample Ontology** developed in RDF/OWL, which implements the **Semantic Framework** proposed in the thesis.  
 It models the **four-layer Trust over IP (ToIP) architecture** — *Technology*, *Utility*, *Governance*, and *Ecosystem* — through formal classes, properties, and relationships that link **technical entities** to **normative and ethical values**.  
@@ -74,7 +74,7 @@ It models the **four-layer Trust over IP (ToIP) architecture** — *Technology*,
 The ontology serves as the **conceptual backbone** of the framework, enabling semantic reasoning, interoperability, and the evaluation of digital identity ecosystems according to **Self-Sovereign Identity (SSI)** principles.
 
 #### 6. Ontologies for Case Studies
-**Path:** [`/ontologie/`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/ontologie)
+**Path:** [`/ontologies`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/ontologies)
 
 Contains ontology instances for real-world identity systems:
 - eIDAS  
