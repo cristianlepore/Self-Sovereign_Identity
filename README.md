@@ -89,7 +89,7 @@ These are used to **test and compare** systems within the semantic evaluation mo
 
 ### 🧮 Analytical and Computational Tools
 
-#### 7. Subject–Verb–Object (SVO) — Python Scripts
+#### 7. Subject–Verb–Object (SVO) — Python Scrvipts
 **Path:** [`/nlp/BERT.py`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/nlp/BERT.py)
 
 Python scripts implementing the **Subject–Verb–Object (SVO)**, wich extracts basic elements.
