@@ -125,8 +125,9 @@ Most scripts rely on **NumPy** for numerical computation and **Matplotlib** for 
 
 ---
 
-### bibtex
+### 📚 BibTeX
 
+```bibtex
 @phdthesis{lepore2025ssi,
   author    = {Cristian Lepore},
   title     = {A Semantic Framework for Defining and Assessing e-Identity Management Ecosystems Based on Self-Sovereign Identity Principles},
