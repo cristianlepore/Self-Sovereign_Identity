@@ -6,29 +6,29 @@
 
 ---
 
-## 🧭 Overview
+## Overview
 
-This repository provides the **ontologies, principles, scripts, and datasets** developed during the doctoral research on **Self-Sovereign Identity (SSI)**.  
-They implement and validate a **semantic framework** for modeling and evaluating **digital identity ecosystems** according to SSI principles and the Trust over IP (ToIP) stack.
+This repository contains the **ontologies, principles, scripts, and datasets** developed within the doctoral research on **Self-Sovereign Identity (SSI)**.  
+These resources implement and validate a **semantic framework** for modeling and evaluating **digital identity ecosystems** in accordance with SSI principles and the Trust over IP (ToIP) reference architecture.
 
-All materials are structured to ensure **transparency**, **reproducibility**, and **reuse** for academic or applied research.
+All materials are organized to promote **transparency**, **reproducibility**, and **reusability** for both academic and applied research contexts.
 
 ---
 
-## 🗂️ Repository Structure (Grouped by Topic)
+## Repository Structure
 
-### 🧩 Theoretical Foundations
+### Theoretical Foundations
 
 #### 1. Kernel Theories (KT)
 **File:** [`Kernel_Theories/kernel_theories.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/kernel_theories/kernel_theories.md)
 
-Contains the **foundational theories** supporting the semantic and evaluative framework.  
-Each Kernel Theory corresponds to one or more **Design Principles (DP)** from the ToIP and SSI paradigms.
+This section presents the **foundational theories** underpinning the semantic and evaluative framework.  
+Each Kernel Theory corresponds to one or more **Design Principles (DPs)** drawn from the ToIP and SSI paradigms.
 
-Schema used:
-> **Design Principle → Objective (Why) → Mechanism (How) → Conditions (Where/When) → Kernel Theories → How Obtained**
+Schema employed:
+> **Design Principle → Objective (Why) → Mechanism (How) → Conditions (Where/When) → Kernel Theories → Method of Derivation**
 
-Representative examples:
+Representative examples include:
 - **End-to-End Principle** — Saltzer, Reed & Clark (1984)  
 - **Modularity & Layering** — Baldwin & Clark (2000)  
 - **Public Key Cryptography Theory** — Diffie & Hellman (1976); Rivest et al. (1978)  
@@ -36,97 +36,97 @@ Representative examples:
 - **Relational Theory of Trust** — Hardin (2002)  
 - **Value Sensitive Design / Responsible Innovation** — Friedman et al. (2002); Stilgoe et al. (2013)
 
-These Kernel Theories form the **epistemic backbone** of the ontology, grounding the model in rigorous interdisciplinary theory.
+These Kernel Theories constitute the **epistemic foundation** of the ontology, grounding the model in rigorous interdisciplinary theory.
 
 ---
 
-### 🧱 SSI Principles and Conceptual Model
+### SSI Principles and Conceptual Model
 
 #### 2. Principles of Self-Sovereign Identity
 **File:** [`principles_of_ssi.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/principles_of_ssi.md)
 
-A harmonized list of **SSI principles** derived from a systematic literature review and expert validation.  
+A harmonized set of **SSI principles** derived from a systematic literature review and expert validation.  
 Each principle includes:
-- Definition  
+- A definition  
 - Source references  
 - Assigned category  
 
 #### 3. Principles and Categories Table
 **Link:** [Principles_and_categories.html](https://cristianlepore.github.io/Self-Sovereign_Identity/Principles_and_categories.html)
 
-Interactive HTML visualization showing the **clustering of SSI principles** into thematic domains (corresponding to Table 5.3 in the thesis).
+Interactive HTML visualization illustrating the **clustering of SSI principles** into thematic domains (corresponding to Table 5.3 in the thesis).
 
 #### 4. Final List of SSI Principles
 **Path:** [`/definition_of_principles.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/definition_of_principles.md)
 
-Validated and consolidated list of principles used in the evaluation of **case studies** (eIDAS, Sovrin, Bhutan NDI).
+Consolidated and validated list of principles used in the evaluation of **case studies** (eIDAS, Sovrin, Bhutan NDI).
 
 ---
 
-### 🧠 Ontologies
+### Ontologies
 
 #### 5. Reference Ontology (ToIP)
 **Path:** [`/ontologie/toip`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/ontologies/toip)
 
-This folder contains the **Sample Ontology** developed in RDF/OWL, which implements the **Semantic Framework** proposed in the thesis.  
-It models the **four-layer Trust over IP (ToIP) architecture** — *Technology*, *Utility*, *Governance*, and *Ecosystem* — through formal classes, properties, and relationships that link **technical entities** to **normative and ethical values**.  
+This directory contains the **reference ontology**, developed in RDF/OWL, which operationalizes the **semantic framework** proposed in the thesis.  
+It models the **four-layer Trust over IP (ToIP) architecture** — *Technology*, *Utility*, *Governance*, and *Ecosystem* — through formal classes, properties, and relationships linking **technical entities** with **normative and ethical values**.
 
-The ontology serves as the **conceptual backbone** of the framework, enabling semantic reasoning, interoperability, and the evaluation of digital identity ecosystems according to **Self-Sovereign Identity (SSI)** principles.
+The ontology serves as the **conceptual core** of the framework, enabling semantic reasoning, interoperability, and the assessment of digital identity ecosystems in line with **Self-Sovereign Identity** principles.
 
 #### 6. Ontologies for Case Studies
 **Path:** [`/ontologies`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/ontologies)
 
-Contains ontology instances for real-world identity systems:
+Includes ontology instances for selected real-world identity systems:
 - eIDAS  
 - Sovrin  
-- PKIX
+- PKIX  
 - uPort  
 - Bhutan NDI  
 
-These are used to **test and compare** systems within the semantic evaluation model.
+These instances are used to **validate and compare** systems within the semantic evaluation model.
 
 ---
 
-### 🧮 Analytical and Computational Tools
+### Analytical and Computational Tools
 
-#### 7. Subject–Verb–Object (SVO) — Python Scrvipts
+#### 7. Subject–Verb–Object (SVO) Extraction — Python Scripts
 **Path:** [`/nlp/BERT.py`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/nlp/BERT.py)
 
-Python scripts implementing the **Subject–Verb–Object (SVO)**, wich extracts basic elements.
-Used to generate ontology instances and map principles to entities.
+Python scripts implementing the **Subject–Verb–Object (SVO)** model to extract fundamental relational structures.  
+These outputs support the generation of ontology instances and the mapping of principles to entities.
 
 #### 8. Clustering Techniques
 **Path:** [`/clustering`](https://github.com/cristianlepore/Self-Sovereign_Identity/tree/main/clustering)
 
-Scripts for:
-- **K-Means clustering**
-- **Louvain**
-- **Greedy**
+Includes scripts for:
+- **K-Means Clustering**  
+- **Louvain Algorithm**  
+- **Greedy Optimization**
 
 Used to identify conceptual clusters of SSI principles, as described in **Appendix B** of the thesis.
 
 #### 9. SPARQL Queries
 **File:** [`queries/sparql.py`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/queries/sparql.py)
 
-Contains **SPARQL queries** used in the *Principle Engine* to extract and score relationships between principles, indicators, and system components.
+Contains **SPARQL queries** employed within the *Principle Engine* to extract and score relationships between principles, indicators, and system components.
 
 ---
 
-### ⚙️ 10. Libraries and Dependencies
+### Libraries and Dependencies
 
 **File:** [`libraries.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/libraries.md)
 
-This section provides a dependency map of all Python scripts used across the repository.  
-Most scripts rely on **NumPy** for numerical computation and **Matplotlib** for data visualization, while ontology-related scripts additionally use **Owlready2** for semantic reasoning.
+This section provides a dependency overview for all Python scripts included in the repository.  
+Most scripts rely on **NumPy** for numerical computation and **Matplotlib** for data visualization, while ontology-related scripts use **Owlready2** for semantic reasoning.
 
-#### 🧩 Core Libraries
-- **NumPy (`np`)** — numerical operations, matrix manipulation, statistical computation  
-- **Matplotlib (`plt`, `ax`)** — plotting utilities for visual analysis  
-- **Owlready2 (`get_ontology`, `sync_reasoner`, `URIRef`, `rdf_graph`)** — ontology management and reasoning in RDF/OWL
+#### Core Libraries
+- **NumPy (`np`)** — numerical operations, matrix manipulation, and statistical computation  
+- **Matplotlib (`plt`, `ax`)** — plotting and visualization utilities  
+- **Owlready2 (`get_ontology`, `sync_reasoner`, `URIRef`, `rdf_graph`)** — ontology management and RDF/OWL reasoning  
 
 ---
 
-### 📚 BibTeX
+### Citation (BibTeX)
 
 ```bibtex
 @phdthesis{lepore2025ssi,
