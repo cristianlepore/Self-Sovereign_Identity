@@ -9,7 +9,6 @@
       <!-- ********************************************************************************************* -->
       <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
       <!-- ************************* Tech layer 3 of the ToIP model ************************************ -->
-      <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
       <!-- ********************************************************************************************* -->  
 
       <owl:Ontology rdf:about="http://example.org/techLayer3#">
@@ -22,26 +21,12 @@
       <!-- ********* Class *************** -->
       <!-- ******************************* -->
 
-      <owl:Class rdf:about="techLayer3#Attribute">
-            <rdfs:label>Attribute</rdfs:label>
-            <rdfs:comment>An identifiable set of data that describes an entity, which is the subject of the attribute.</rdfs:comment>
-            <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:attributes"/>
-      </owl:Class>
-
       <owl:Class rdf:about="techLayer3#VC">
             <rdfs:label>Verifiable credential</rdfs:label>
             <rdfs:comment>A standard data model and representation format for cryptographically-verifiable digital credentials as defined by the W3C Verifiable Credentials Data Model Specification.</rdfs:comment>
             <rdfs:subClassOf rdf:resource="techLayer3#Credential"/>
             <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:verifiable-credential"/>
       </owl:Class>
-      <!--
-      <owl:Class rdf:about="#ChainedCredential">
-            <rdfs:label>Chained credential</rdfs:label>
-            <rdfs:comment>Two or more credentials linked together to create a trust chain between the credentials that is cryptographically verifiable.</rdfs:comment>
-            <rdfs:subClassOf rdf:resource="techLayer3#Credential"/>
-            <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:chained-credentials"/>
-      </owl:Class>
-      -->
 
       <owl:Class rdf:about="techLayer3#TrustTaskProtocol">
             <rdfs:label>Trust Task Protocol</rdfs:label>
@@ -54,13 +39,6 @@
             <rdfs:comment>The open standard trust task protocol defined by the ToIP Foundation to perform the trust task of querying a trust registry. The ToIP Trust Registry Protocol operates at Layer 3 of the ToIP stack.</rdfs:comment>
             <rdfs:subClassOf rdf:resource="techLayer3#TrustTaskProtocol"/>
             <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:toip-trust-registry-protocol"/>
-      </owl:Class>
-
-      <owl:Class rdf:about="techLayer3#CredentialExchangeProtocol">
-            <rdfs:label>Credential exchange protocol</rdfs:label>
-            <rdfs:comment>Credential exchange protocol governs the secure exchange of verifiable credentials between parties, including specialized sub-protocols.</rdfs:comment>
-            <rdfs:subClassOf rdf:resource="techLayer3#TrustTaskProtocol"/>
-            <rdfs:isDefinedBy rdf:resource="https://trustoverip.github.io/TechArch/"/>
       </owl:Class>
 
       <owl:Class rdf:about="techLayer3#MessagingProtocol">

@@ -11,7 +11,6 @@
     <!-- ********************************************************************************************* -->
     <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
     <!-- ************************* Gov layer 3 of the ToIP model ************************************* -->
-    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
     <!-- ********************************************************************************************* -->
 
     <owl:Ontology rdf:about="http://example.org/govLayer3#">
@@ -48,13 +47,6 @@
         <rdfs:comment>The technology provider adopts technical standards.</rdfs:comment>
     </owl:ObjectProperty>
 
-    <owl:ObjectProperty rdf:about="govLayer3#identifiesRiskLevel">
-        <rdfs:domain rdf:resource="governance#ControlledDocument"/>
-        <rdfs:range rdf:resource="govLayer3#RiskLevel"/>
-        <rdfs:label>identifies</rdfs:label>
-        <rdfs:comment>The process of identifying risks to organizational operations (including mission, functions, image, reputation), organizational assets, individuals, other organizations, and the overall ecosystem, resulting from the operation of an information system. Risk assessment is part of risk management, incorporates threat and vulnerability analyses, and considers risk mitigations provided by security controls planned or in place.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:risk-assessment"/>
-    </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="govLayer3#issuerConsultsAuthoritativeSource">
         <rdfs:domain rdf:resource="techLayer3#Issuer"/>
@@ -85,12 +77,7 @@
     <!-- ********* Attribute *********** -->
     <!-- ******************************* -->
 
-    <owl:DatatypeProperty rdf:about="govLayer1#open">
-        <rdfs:domain rdf:resource="govLayer1#TechnicalStandard"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:label>open</rdfs:label>
-        <rdfs:comment>Indicates whether the technical standards are open to public review and comment.</rdfs:comment>
-    </owl:DatatypeProperty>
+
 
 
     <!-- ******************************* -->

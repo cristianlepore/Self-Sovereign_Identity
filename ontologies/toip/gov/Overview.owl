@@ -11,7 +11,6 @@
     <!-- ********************************************************************************************* -->
     <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
     <!-- ************************* Governance of the ToIP model ************************************** -->
-    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
     <!-- ********************************************************************************************* -->
 
     <owl:Ontology rdf:about="http://example.org/governance#">
@@ -24,104 +23,6 @@
     <!-- ********* Class *************** -->
     <!-- ******************************* -->
 
-    <owl:Class rdf:about="governance#GoverningAuthority">
-        <rdfs:label>Governing authority</rdfs:label>
-        <rdfs:comment>The party (or set of parties) authoritative for governing a trust community, usually (but not always) by developing, publishing, maintaining, and enforcing a governance framework. A governing body may be a government, a formal legal entity of any kind, an informal group of any kind, or an individual. A governing body may also delegate operational responsibilities to an administering body.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="techLayer4#Entity"/>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governing-authority"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#AdministeringAuthority">
-        <rdfs:label>Administering authority</rdfs:label>
-        <rdfs:comment>A legal entity delegated by a governing body to administer the operation of a governance framework and governed infrastructure for a digital trust ecosystem, such as one or more trust registries.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="techLayer4#Entity"/>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:administering-authority"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#GovernanceFramework">
-        <rdfs:label>Governance framework</rdfs:label>
-        <rdfs:comment>A collection of one or more governance documents published by the governing body of a trust community.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-framework"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#GovernanceDocument">
-        <rdfs:label>Governance document</rdfs:label>
-        <rdfs:comment>A document with at least one identifier that specifies governance requirements for a trust community. Note: A governance document is a component of a governance framework.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="governance#GovernanceFramework"/>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-document"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#PrimaryDocument">
-        <rdfs:label>Primary document</rdfs:label>
-        <rdfs:comment>The governance document at the root of a governance framework. The primary document specifies the other controlled documents in the governance framework.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="governance#GovernanceDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:primary-document"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#ControlledDocument">
-        <rdfs:label>Controlled document</rdfs:label>
-        <rdfs:comment>A governance document whose authority is derived from a primary document.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="governance#GovernanceDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:controlled-document"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#SectorSpecificPolicy">
-        <rdfs:label>Sector-specific policy</rdfs:label>
-        <rdfs:comment>Statements,rules, or assertions that specify the correct or expected behavior of an entity. For example, an authorization policy might specify the correct access control rules for a software component. Policies may be human-readable or machine-readable or both.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:policy"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#LegalAgreement">
-        <rdfs:label>Legal agreement</rdfs:label>
-        <rdfs:subClassOf rdf:resource="governance#GovernanceDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/Sovrin-Governance-Framework-V2-Master-Document-V2.pdf"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#Definition">
-        <rdfs:label>Definition</rdfs:label>
-        <rdfs:subClassOf rdf:resource="governance#ControlledDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/Sovrin-Governance-Framework-V2-Master-Document-V2.pdf"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#Specification">
-        <rdfs:label>Specification</rdfs:label>
-        <rdfs:subClassOf rdf:resource="governance#ControlledDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/Sovrin-Governance-Framework-V2-Master-Document-V2.pdf"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#Policy">
-        <rdfs:label>Policy</rdfs:label>
-        <rdfs:subClassOf rdf:resource="governance#ControlledDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/Sovrin-Governance-Framework-V2-Master-Document-V2.pdf"/>
-    </owl:Class>
-
-    <owl:Class rdf:about="governance#Framework">
-        <rdfs:label>Framework</rdfs:label>
-        <rdfs:subClassOf rdf:resource="governance#ControlledDocument"/>
-        <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/Sovrin-Governance-Framework-V2-Master-Document-V2.pdf"/>
-    </owl:Class>
-
-
-
-    <!-- ******************************* -->
-    <!-- ********* Relation ************ -->
-    <!-- ******************************* -->
-
-    <owl:ObjectProperty rdf:about="governance#enforcesGovernanceFramework">
-        <rdfs:domain rdf:resource="governance#GoverningAuthority"/>
-        <rdfs:range rdf:resource="governance#GovernanceFramework"/>
-        <rdfs:label>enforces</rdfs:label>
-        <rdfs:comment>The party (or set of parties) authoritative for governing a trust community, usually (but not always) by developing, publishing, maintaining, and enforcing a governance framework. A governing body may be a government, a formal legal entity of any kind, an informal group of any kind, or an individual. A governing body may also delegate operational responsibilities to an administering body.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governing-authority"/>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="governance#hasIdentifier">
-        <rdfs:domain rdf:resource="governance#GovernanceDocument"/>
-        <rdfs:range rdf:resource="techLayer1#Identifier"/>
-        <rdfs:label>has</rdfs:label>
-        <rdfs:comment>A document with at least one identifier that specifies governance requirements for a trust community. Note: A governance document is a component of a governance framework.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-document"/>
-    </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="governance#delegatesAdministeringAuthority">
         <rdfs:domain rdf:resource="governance#GoverningAuthority"/>
@@ -137,37 +38,6 @@
         <rdfs:label>administers</rdfs:label>
         <rdfs:comment>A legal entity delegated by a governing body to administer the operation of a governance framework and governed infrastructure for a digital trust ecosystem, such as one or more trust registries.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:administering-authority"/>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="governance#specifiesControlledDocument">
-        <rdfs:domain rdf:resource="governance#PrimaryDocument"/>
-        <rdfs:range rdf:resource="governance#ControlledDocument"/>
-        <rdfs:label>specifies</rdfs:label>
-        <rdfs:comment>The governance document at the root of a governance framework. The primary document specifies the other controlled documents in the governance framework.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:primary-document"/>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="governance#complementsSectorSpecificPolicy">
-        <rdfs:domain rdf:resource="governance#SectorSpecificPolicy"/>
-        <rdfs:range rdf:resource="governance#GovernanceFramework"/>
-        <rdfs:label>complements</rdfs:label>
-        <rdfs:comment>The governance is a layering approach, with sector-specific policies that complemente the national identity policy. (from the ToIP document of mapping ToIP with the Bhutan national identity framework)</rdfs:comment>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="governance#interactsWithAdministeringAuthority">
-        <rdfs:domain rdf:resource="governance#AdministeringAuthority"/>
-        <rdfs:range rdf:resource="governance#AdministeringAuthority"/>
-        <rdfs:label>interacts</rdfs:label>
-        <rdfs:comment>The entity in a public key infrastructure (PKI) that is responsible for issuing public key certificates and exacting compliance to a PKI policy.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:certificate-authority"/>
-    </owl:ObjectProperty>
-
-    <owl:ObjectProperty rdf:about="governance#rulesParty">
-        <rdfs:domain rdf:resource="governance#GovernanceFramework"/>
-        <rdfs:range rdf:resource="techLayer4#TrustCommunity"/>
-        <rdfs:label>rules</rdfs:label>
-        <rdfs:comment>The governance framework rules the parties.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource=""/>
     </owl:ObjectProperty>
 
 
