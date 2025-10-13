@@ -111,22 +111,22 @@ Contains **SPARQL queries** used in the *Principle Engine* to extract, compare, 
 
 ---
 
-### ⚙️ Dependencies and Environment
+### ⚙️ 10. Libraries and Dependencies
 
-#### 10. Libraries and Dependencies
 **File:** [`libraries.md`](https://github.com/cristianlepore/Self-Sovereign_Identity/blob/main/libraries.md)
 
-Lists all Python libraries and software packages required to reproduce analyses and run the semantic evaluation framework.
+This section provides a dependency map of all Python scripts used across the repository.  
+Most scripts rely on **NumPy** for numerical computation and **Matplotlib** for data visualization, while ontology-related scripts additionally use **Owlready2** for semantic reasoning.
+
+#### 🧩 Core Libraries
+- **NumPy (`np`)** — numerical operations, matrix manipulation, statistical computation  
+- **Matplotlib (`plt`, `ax`)** — plotting utilities for visual analysis  
+- **Owlready2 (`get_ontology`, `sync_reasoner`, `URIRef`, `rdf_graph`)** — ontology management and reasoning in RDF/OWL
 
 ---
 
-## 📚 How to Cite
+### bibtex
 
-If you use this repository or any of its resources, please cite:
-
-> Lepore, C. (2025). *A Semantic Framework for Defining and Assessing e-Identity Management Ecosystems Based on Self-Sovereign Identity Principles*. Université de Toulouse, IRIT Laboratory.
-
-```bibtex
 @phdthesis{lepore2025ssi,
   author    = {Cristian Lepore},
   title     = {A Semantic Framework for Defining and Assessing e-Identity Management Ecosystems Based on Self-Sovereign Identity Principles},
