@@ -1,0 +1,391 @@
+<rdf:RDF xmlns="http://example.org/techLayer1#"
+    xml:base="http://example.org/techLayer1"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:techLayer1="http://example.org/techLayer1#"
+    xmlns:ex="http://example.org/someOtherNamespace#">
+
+
+    <!-- ********************************************************************************************* -->
+    <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
+    <!-- ************************* Tech layer 1 of the ToIP model ************************************ -->
+    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
+    <!-- ********************************************************************************************* -->
+
+    <owl:Ontology rdf:about="http://example.org/techLayer1#">
+        <rdfs:comment>Ontology representing the tech Layer 1 of the ToIP stack.</rdfs:comment>
+    </owl:Ontology>
+
+
+     <!-- ******************************* -->
+     <!-- ********* Class *************** -->
+     <!-- ******************************* -->
+
+
+     <owl:Class rdf:about="techLayer1#Metadata">
+          <rdfs:label>Metadata</rdfs:label>
+          <rdfs:comment>Information describing the characteristics of data including, for example, structural metadata describing data structures (e.g., data format, syntax, and semantics) and descriptive metadata describing data contents (e.g., information security labels).</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:metadata"/>
+     </owl:Class>
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Attribute *********** -->
+     <!-- ******************************* -->
+
+     <owl:DatatypeProperty rdf:about="techLayer1#discoverable">
+          <rdfs:domain rdf:resource="techLayer1#VID"/>
+          <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+          <rdfs:label>discoverable</rdfs:label>
+          <rdfs:comment>A verifiable identifier may be discoverable. [L2.8]</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://trustoverip.org/permalink/ToIP-Technical-Architecture-Specification-V1.0-PR1-2022-11-14.pdf"/>
+     </owl:DatatypeProperty>
+
+
+     <owl:NamedIndividual rdf:about="techLayer1#PoolLedger">
+          <rdf:type rdf:resource="techLayer1#VDR"/>
+          <rdfs:label>Pool ledger</rdfs:label>
+          <rdfs:comment>The system of record for what Sovrin nodes are permitted, at any one point it time, to serve as validator or observer nodes. The Pool ledger stores the outcome of node votes on the Voting ledger. This ledger plays a key role in verified node discovery (see the following section).</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/2018/03/The-Technical-Foundations-of-Sovrin.pdf"/>
+          <!-- Relation hasArchitectureType linked to decentralizedArchitecture -->
+          <techLayer1:hasArchitectureType rdf:resource="techLayer1#decentralizedArchitecture"/>
+          <!-- Public: true -->
+          <techLayer1:public rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</techLayer1:public>
+          <!-- Permissioned: true -->
+          <techLayer1:permissioned rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</techLayer1:permissioned>
+     </owl:NamedIndividual>
+     <!-- Instance of TSP -->
+     <owl:NamedIndividual rdf:about="techLayer1#Janus">
+          <rdf:type rdf:resource="techLayer1#TrustedCommunicationProtocol"/>
+          <rdfs:label>Janus</rdfs:label>
+          <rdfs:comment>Janus is the current codename for a protocol that enables secure communication between peers. Its name refers to the two-faced figure from Greek mythology, emphasizing a two-way flow of information.</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://github.com/sovrin-foundation/protocol/blob/master/janus/README.md"/>
+     </owl:NamedIndividual>
+
+     <!-- Instance of data storage -->
+     <owl:NamedIndividual rdf:about="techLayer1#SecureStorage">
+          <rdf:type rdf:resource="techLayer1#DataVault"/>
+          <rdfs:label>Secure Storage</rdfs:label>
+          <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/2018/03/The-Technical-Foundations-of-Sovrin.pdf"/>
+          <techLayer1:localDataVault rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</techLayer1:localDataVault>
+          <techLayer1:maintainsCredential rdf:resource="techLayer1#CleartextClaim"/>
+          <techLayer1:maintainsCredential rdf:resource="techLayer1#EncryptedClaim"/>
+          <techLayer1:maintainsCredential rdf:resource="techLayer1#HashSignatureClaim"/>
+          <techLayer1:storesIdentifier rdf:resource="techLayer1#DIDHolder"/>
+     </owl:NamedIndividual>
+
+     <!-- Instance of Key Management System -->
+     <owl:NamedIndividual rdf:about="techLayer1#Keyring">
+          <rdf:type rdf:resource="techLayer1#KeyManagementSystem"/>
+          <rdfs:label>Keyring</rdfs:label>
+          <rdfs:comment>An identity owner's Sovrin keychain is literally “the keys to their kingdom”. So Sovrin agents will typically perform the service of maintaining an encrypted backup to simplify key recovery.</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/2018/03/The-Technical-Foundations-of-Sovrin.pdf"/>
+          <!-- The key management system manages the DID of Holder -->
+          <techLayer1:managesIdentifier rdf:resource="techLayer1#DIDHolder"/>
+     </owl:NamedIndividual>
+
+      <owl:ObjectProperty rdf:about="techLayer1#agencyOfUserAgent">
+            <rdfs:domain rdf:resource="techLayer1#Actor"/>
+            <rdfs:range rdf:resource="techLayer1#UserAgent"/>
+            <rdfs:label>agency of</rdfs:label>
+            <rdfs:comment>An entity that can act (do things/execute actions), e.g. people, machines, but not organizations. A digital agent can serve as an actor acting on behalf of its principal.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:actor"/>
+      </owl:ObjectProperty>
+
+      <owl:ObjectProperty rdf:about="techLayer1#issuanceCredential">
+            <rdfs:domain rdf:resource="techLayer1#CredentialExchangeProtocol"/>
+            <rdfs:range rdf:resource="techLayer1#Credential"/>
+            <rdfs:label>issuance</rdfs:label>
+            <rdfs:comment>The action of an issuer producing and transmitting a digital credential to a holder. A holder may request issuance by submitting an issuance request.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:issuance"/>
+      </owl:ObjectProperty>
+
+      <owl:ObjectProperty rdf:about="techLayer1#presentationProof">
+            <rdfs:domain rdf:resource="techLayer1#CredentialExchangeProtocol"/>
+            <rdfs:range rdf:resource="techLayer1#Proof"/>
+            <rdfs:label>presentation</rdfs:label>
+            <rdfs:comment>A verifiable message that a holder may send to a verifier containing proofs of one or more claims derived from one or more digital credentials from one or more issuers as a response to a specific presentation request from a  verifier.</rdfs:comment>
+            <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:presentation"/>
+      </owl:ObjectProperty>
+
+      <!-- ******************************* -->
+      <!-- ******** Constraints ********** -->
+      <!-- ******************************* -->
+
+      <!-- Issuer, holder, verifier are disjoint -->
+      <owl:AllDisjointClasses>
+            <owl:members rdf:parseType="Collection">
+                  <rdf:Description rdf:about="techLayer1#Issuer"/>
+                  <rdf:Description rdf:about="techLayer1#Holder"/>
+                  <rdf:Description rdf:about="techLayer1#Verifier"/>
+            </owl:members>
+      </owl:AllDisjointClasses>
+
+
+
+      <!-- ******************************* -->
+      <!-- * Connection with other Layer * -->
+      <!-- ******************************* -->
+
+      <owl:Class rdf:about="techLayer1#Party">
+            <rdfs:label>Party</rdfs:label>
+            <rdfs:comment>An entity that sets its objectives, maintains its knowledge, and uses that knowledge to pursue its objectives in an autonomous (sovereign) manner. Natural persons and organizations are the typical examples.</rdfs:comment>
+            <rdfs:subClassOf rdf:resource="techLayer1#Entity"/>
+            <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:party"/>
+      </owl:Class>
+
+      <owl:NamedIndividual rdf:about="techLayer1#ToIPRP">
+            <rdf:type rdf:resource="techLayer1#TrustRegistryProtocol"/>
+            <rdfs:label>ToIP registry protocol</rdfs:label>
+      </owl:NamedIndividual>
+
+      <owl:NamedIndividual rdf:about="techLayer1#AriesBasicMessageProtocol">
+            <rdf:type rdf:resource="techLayer1#MessagingProtocol"/>
+            <rdfs:label>Aries Basic Message Protocol</rdfs:label>
+            <rdfs:comment></rdfs:comment>
+      </owl:NamedIndividual>
+
+      <owl:NamedIndividual rdf:about="techLayer1#AriesTrustPingProtocol">
+            <rdf:type rdf:resource="techLayer1#MessagingProtocol"/>
+            <rdfs:label>Aries Trust Ping Protocol</rdfs:label>
+            <rdfs:comment></rdfs:comment>
+      </owl:NamedIndividual>
+
+      <owl:NamedIndividual rdf:about="techLayer1#OutOfBand">
+            <rdf:type rdf:resource="techLayer1#OutOfBandProtocol"/>
+            <rdfs:label>Aries Out-Of-Band Protocol 1.1</rdfs:label>
+            <rdfs:comment></rdfs:comment>
+      </owl:NamedIndividual>
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Class *************** -->
+     <!-- ******************************* -->
+
+     <owl:Class rdf:about="techLayer1#TrustTask">
+          <rdfs:label>Trust Task</rdfs:label>
+          <rdfs:comment>A specific task that involves establishing, verifying, or maintaining trust relationships or exchanging verifiable messages or verifiable data that can be performed on behalf of a trust application by a trust task protocol at Layer 3 of the ToIP stack.</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-task"/>
+     </owl:Class>
+     
+     <owl:Class rdf:about="techLayer1#TrustApplication">
+          <rdfs:label>Trust application</rdfs:label>
+          <rdfs:comment>An application that runs at ToIP Layer 4 in order to perform trust tasks or engage in other verifiable messaging using the ToIP stack.</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-application"/>
+     </owl:Class>
+
+     <owl:Class rdf:about="techLayer1#Organization">
+          <rdfs:label>Organization</rdfs:label>
+          <rdfs:comment>A party that consists of a group of parties who agree to be organized into a specific form in order to better achieve a common set of objectives. Examples include corporations, partnerships, sole proprietorships, non-profit organizations, associations, and governments.</rdfs:comment>
+          <rdfs:subClassOf rdf:resource="techLayer1#Party"/>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:organizations"/>
+     </owl:Class>
+
+
+     <!-- ******************************* -->
+     <!-- ******** Constraints ********** -->
+     <!-- ******************************* -->
+
+     <!-- Issuer, holder, verifier are disjoint -->
+     <owl:AllDisjointClasses>
+          <owl:members rdf:parseType="Collection">
+               <rdf:Description rdf:about="techLayer1#Actor"/>
+               <rdf:Description rdf:about="techLayer1#Organization"/>
+          </owl:members>
+     </owl:AllDisjointClasses>
+
+
+
+     <!-- ******************************* -->
+     <!-- * Connection with other Layer * -->
+     <!-- ******************************* -->
+
+     <owl:Class rdf:about="techLayer1#Actor">
+          <rdfs:label>Actor</rdfs:label>
+          <rdfs:comment>An entity that can act (do things/execute actions), e.g. people, machines, but not organizations. A digital agent can serve as an actor acting on behalf of its principal.</rdfs:comment>
+          <rdfs:subClassOf rdf:resource="techLayer1#Party"/>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:actor"/>
+     </owl:Class>
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Instance ************ -->
+     <!-- ******************************* -->
+
+     <!-- Instance of owner -->
+     <owl:NamedIndividual rdf:about="techLayer1#principal">
+          <rdf:type rdf:resource="techLayer1#Principal"/>
+          <rdfs:label>Principal</rdfs:label>
+          <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/2018/03/The-Technical-Foundations-of-Sovrin.pdf"/>
+          <techLayer1:executesTrustApplication rdf:resource="techLayer1#SovrinClientApp"/>
+          <techLayer1:memberOfTrustCommunity rdf:resource="techLayer1#SovrinTrustCommunity"/>
+     </owl:NamedIndividual>
+
+
+    <owl:ObjectProperty rdf:about="techLayer1#governsRegistry">
+        <rdfs:domain rdf:resource="techLayer1#GoverningAuthority"/>
+        <rdfs:range rdf:resource="techLayer1#Registry"/>
+        <rdfs:label>governs</rdfs:label>
+        <rdfs:comment>The governing authority governs trust registries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://ayra.forum/wp-content/uploads/2025/01/Ayra-Technical-Whitepaper-v0.0.10.pdf"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="techLayer1#runsGovernanceFramework">
+        <rdfs:domain rdf:resource="techLayer1#Validator"/>
+        <rdfs:range rdf:resource="techLayer1#GovernanceFramework"/>
+        <rdfs:label>runs</rdfs:label>
+        <rdfs:comment>The validators run the consensus described within the governance framework.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Attribute *********** -->
+    <!-- ******************************* -->
+
+    <owl:DatatypeProperty rdf:about="techLayer1#open">
+        <rdfs:domain rdf:resource="techLayer1#TechnicalStandard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>open</rdfs:label>
+        <rdfs:comment>Indicates whether the technical standards are open to public review and comment.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- ******************************* -->
+    <!-- * Connection with other Layer * -->
+    <!-- ******************************* -->
+
+    <owl:ObjectProperty rdf:about="techLayer1#enforcesGovernanceFramework">
+        <rdfs:domain rdf:resource="techLayer1#GoverningAuthority"/>
+        <rdfs:range rdf:resource="techLayer1#GovernanceFramework"/>
+        <rdfs:label>enforces</rdfs:label>
+        <rdfs:comment>The party (or set of parties) authoritative for governing a trust community, usually (but not always) by developing, publishing, maintaining, and enforcing a governance framework. A governing body may be a government, a formal legal entity of any kind, an informal group of any kind, or an individual. A governing body may also delegate operational responsibilities to an administering body.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governing-authority"/>
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:about="techLayer1#GoverningAuthority">
+        <rdfs:label>Governing authority</rdfs:label>
+        <rdfs:comment>The party (or set of parties) authoritative for governing a trust community, usually (but not always) by developing, publishing, maintaining, and enforcing a governance framework. A governing body may be a government, a formal legal entity of any kind, an informal group of any kind, or an individual. A governing body may also delegate operational responsibilities to an administering body.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governing-authority"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="techLayer1#AdministeringAuthority">
+        <rdfs:label>Administering authority</rdfs:label>
+        <rdfs:comment>A legal entity delegated by a governing body to administer the operation of a governance framework and governed infrastructure for a digital trust ecosystem, such as one or more trust registries.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:administering-authority"/>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="techLayer1#delegatesAdministeringAuthority">
+        <rdfs:domain rdf:resource="techLayer1#GoverningAuthority"/>
+        <rdfs:range rdf:resource="techLayer1#AdministeringAuthority"/>
+        <rdfs:label>delegates</rdfs:label>
+        <rdfs:comment>A governing body may also delegate operational responsibilities to an administering body.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governing-authority"/>
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:about="techLayer1#Registry">
+        <rdfs:label>Registry</rdfs:label>
+        <rdfs:comment>A specialized database of records that serves as an authoritative source of information about entities.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#DigitalTrustUtility"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:registry"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="techLayer1#GovernanceDocument">
+        <rdfs:label>Governance document</rdfs:label>
+        <rdfs:comment>A document with at least one identifier that specifies governance requirements for a trust community. Note: A governance document is a component of a governance framework.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#GovernanceFramework"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-document"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="techLayer1#GovernanceFramework">
+        <rdfs:label>Governance framework</rdfs:label>
+        <rdfs:comment>A collection of one or more governance documents published by the governing body of a trust community.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-framework"/>
+    </owl:Class>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Instance ************ -->
+    <!-- ******************************* -->
+
+    <owl:NamedIndividual rdf:about="techLayer1#TransactionEndorser">
+        <rdf:type rdf:resource="techLayer1#CertificateAuthority"/>
+        <rdfs:label>Transaction Endorser</rdfs:label>
+        <!-- signs metadata -->
+        <techLayer1:signsMetadata rdf:resource="techLayer1#DIDdocumentVerifier"/>
+        <techLayer1:signsMetadata rdf:resource="techLayer1#DIDdocumentHolder"/>
+        <techLayer1:signsMetadata rdf:resource="techLayer1#DIDdocumentIssuer"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="techLayer1#validatorNode">
+        <rdf:type rdf:resource="techLayer1#Validator"/>
+        <rdfs:label>Validator node</rdfs:label>
+        <!-- runs -->
+        <techLayer1:runsGovernanceFramework rdf:resource="techLayer1#SGF"/>
+    </owl:NamedIndividual>
+
+
+
+
+    <!-- ******************************* -->
+    <!-- * Connection with other Layer * -->
+    <!-- ******************************* -->
+
+    <owl:Class rdf:about="techLayer1#TechnologyProvider">
+        <rdfs:label>Technology provider</rdfs:label>
+        <rdfs:comment>Technology Providers are those things that implement the Technology Components. They are either Products (that you can buy, download, etc.) or they are configurations of other products in particular technical architectures, in which case they are called Technology Product Builds.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#Organization"/>
+        <rdfs:isDefinedBy rdf:resource="https://enterprise-architecture.org/university/defining-technology-providers/"/>
+    </owl:Class>
+      
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Class *************** -->
+    <!-- ******************************* -->
+
+    <owl:Class rdf:about="techLayer1#AccreditingAuthority">
+        <rdfs:label>Accrediting authority</rdfs:label>
+        <rdfs:comment>Formal declaration by an accrediting authority that an information system is approved to operate at an acceptable level of risk, based on the implementation of an approved set of technical, managerial, and procedural safeguards.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#Organization"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:accreditation"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="techLayer1#Auditor">
+        <rdfs:label>Auditor</rdfs:label>
+        <rdfs:comment>The party responsible for performing an audit. Typically an auditor must be accredited.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:auditor"/>
+    </owl:Class>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Relation ************ -->
+    <!-- ******************************* -->
+
+    <owl:ObjectProperty rdf:about="techLayer1#accreditsAuditor">
+        <rdfs:domain rdf:resource="techLayer1#AccreditingAuthority"/>
+        <rdfs:range rdf:resource="techLayer1#Auditor"/>
+        <rdfs:label>accredits</rdfs:label>
+        <rdfs:comment>Formal declaration by an accrediting authority that an information system is approved to operate at an acceptable level of risk, based on the implementation of an approved set of technical, managerial, and procedural safeguards.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:accreditation"/>
+    </owl:ObjectProperty>
+    <owl:NamedIndividual rdf:about="techLayer1#BoTGovAuthorityAccreditor">
+        <rdf:type rdf:resource="techLayer1#AccreditingAuthority"/>
+        <rdfs:label>Board of trustee</rdfs:label>
+        <techLayer1:accreditsAuditor rdf:resource="techLayer1#AuditFinanceOffice"/>
+    </owl:NamedIndividual>
+
+
+
+</rdf:RDF>

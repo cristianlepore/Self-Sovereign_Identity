@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/govLayer2#"
+    xml:base="http://example.org/govLayer2"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+
+
+    <!-- ********************************************************************************************* -->
+    <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
+    <!-- ************************* Gov layer 2 of the ToIP model ************************************* -->
+    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
+    <!-- ********************************************************************************************* -->
+
+    <owl:Ontology rdf:about="http://example.org/govLayer2#">
+        <rdfs:comment>Ontology representing the governance Layer 2 of the ToIP stack.</rdfs:comment>
+    </owl:Ontology>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Class *************** -->
+    <!-- ******************************* -->
+
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Relation ************ -->
+    <!-- ******************************* -->
+
+    <owl:ObjectProperty rdf:about="govLayer1#adoptsTechnicalStandard">
+        <rdfs:domain rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:range rdf:resource="govLayer1#TechnicalStandard"/>
+        <rdfs:label>adopts</rdfs:label>
+        <rdfs:comment>The technology provider adopts technical standards.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="govLayer2#providesUserAgent">
+        <rdfs:domain rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:range rdf:resource="techLayer2#UserAgent"/>
+        <rdfs:label>provides</rdfs:label>
+        <rdfs:comment>The technology provider provides hardware and software for the user agent.</rdfs:comment>
+    </owl:ObjectProperty>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Attribute *********** -->
+    <!-- ******************************* -->
+     
+    <owl:DatatypeProperty rdf:about="govLayer1#open">
+        <rdfs:domain rdf:resource="govLayer1#TechnicalStandard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>open</rdfs:label>
+        <rdfs:comment>Indicates whether the technical standards are open to public review and comment.</rdfs:comment>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- ******************************* -->
+    <!-- * Connection with other Layer * -->
+    <!-- ******************************* -->
+
+    <owl:Class rdf:about="techLayer2#UserAgent">
+        <rdfs:label>User Agent</rdfs:label>
+        <rdfs:comment>A software agent that is used directly by the end-user as the principal. Browsers, email clients, and digital wallets are all examples of user agents. Even the DWN is a user agent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:user-agent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="techLayer2#TrustedCommunicationProtocol">
+        <rdfs:label>Trusted Communication Protocol</rdfs:label>
+        <rdfs:comment>The ToIP Trust Spanning Protocol (TSP) is the ToIP Layer 2 protocol for verifiable messaging that implements the trust spanning layer of the ToIP stack.  The TSP enables actors in different digital trust domains to interact in a similar way to how the Internet Protocol (IP) enables devices on different local area networks to exchange data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:toip-trust-spanning-protocol"/>
+    </owl:Class>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Instance ************ -->
+    <!-- ******************************* -->
+
+
+
+</rdf:RDF>

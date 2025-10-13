@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/techLayer4#"
+     xml:base="http://example.org/techLayer4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+     <!-- ********************************************************************************************* -->
+     <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
+     <!-- ************************* Tech layer 4 of the ToIP model ************************************ -->
+     <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
+     <!-- ********************************************************************************************* -->  
+     
+     <owl:Ontology rdf:about="http://example.org/techLayer4#">
+          <rdfs:comment>Ontology representing the tech Layer 4 of the ToIP stack.</rdfs:comment>
+     </owl:Ontology>
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Class *************** -->
+     <!-- ******************************* -->
+
+     <owl:Class rdf:about="techLayer4#TrustTask">
+          <rdfs:label>Trust Task</rdfs:label>
+          <rdfs:comment>A specific task that involves establishing, verifying, or maintaining trust relationships or exchanging verifiable messages or verifiable data that can be performed on behalf of a trust application by a trust task protocol at Layer 3 of the ToIP stack.</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-task"/>
+     </owl:Class>
+
+     <owl:Class rdf:about="techLayer4#Party">
+          <rdfs:label>Party</rdfs:label>
+          <rdfs:comment>An entity that sets its objectives, maintains its knowledge, and uses that knowledge to pursue its objectives in an autonomous (sovereign) manner. Natural persons and organizations are the typical examples.</rdfs:comment>
+          <rdfs:subClassOf rdf:resource="techLayer4#Entity"/>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:party"/>
+     </owl:Class>
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Attribute *********** -->
+     <!-- ******************************* -->
+
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Relation ************ -->
+     <!-- ******************************* -->
+
+     <owl:ObjectProperty rdf:about="techLayer4#actsOnBehalfOfPrincipal">
+          <rdfs:domain rdf:resource="techLayer3#Actor"/>
+          <rdfs:range rdf:resource="techLayer4#Principal"/>
+          <rdfs:label>acts on behalf</rdfs:label>
+          <rdfs:comment>The party for whom, or on behalf of whom, an actor is executing an action (this actor is then called an agent of that party).</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:principal"/>
+     </owl:ObjectProperty>
+
+
+
+
+     <!-- ******************************* -->
+     <!-- ******** Constraints ********** -->
+     <!-- ******************************* -->
+
+     <!-- Issuer, holder, verifier are disjoint -->
+     <owl:AllDisjointClasses>
+          <owl:members rdf:parseType="Collection">
+               <rdf:Description rdf:about="techLayer3#Actor"/>
+               <rdf:Description rdf:about="techLayer4#Organization"/>
+          </owl:members>
+     </owl:AllDisjointClasses>
+
+
+
+     <!-- ******************************* -->
+     <!-- * Connection with other Layer * -->
+     <!-- ******************************* -->
+
+
+
+
+
+     <!-- ******************************* -->
+     <!-- ********* Instance ************ -->
+     <!-- ******************************* -->
+
+
+
+</rdf:RDF>

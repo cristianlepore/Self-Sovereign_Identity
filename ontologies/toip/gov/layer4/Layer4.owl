@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/govLayer4#"
+    xml:base="http://example.org/govLayer4"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+
+
+    <!-- ********************************************************************************************* -->
+    <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
+    <!-- ************************* Gov layer 4 of the ToIP model ************************************* -->
+    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
+    <!-- ********************************************************************************************* -->
+
+    <owl:Ontology rdf:about="http://example.org/govLayer4#">
+        <rdfs:comment>Ontology representing the governance Layer 4 of the ToIP stack.</rdfs:comment>
+    </owl:Ontology>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Class *************** -->
+    <!-- ******************************* -->
+
+    <owl:Class rdf:about="govLayer4#MemberDirectory">
+        <rdfs:label>Member directory</rdfs:label>
+        <rdfs:comment>A one-dimensional trust graph in which an authoritative source publishes a list of entities that are trusted in a specific trust context. A trust list can be considered a simplified form of a trust registry.</rdfs:comment>
+        <owl:equivalentClass rdf:resource="techLayer1#TrustRegistry"/>
+        <owl:equivalentClass rdf:resource="techLayer1#TrustList"/>
+        <owl:equivalentClass rdf:resource="techLayer1#Registry"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-registry"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer4#AccreditingAuthority">
+        <rdfs:label>Accrediting authority</rdfs:label>
+        <rdfs:comment>Formal declaration by an accrediting authority that an information system is approved to operate at an acceptable level of risk, based on the implementation of an approved set of technical, managerial, and procedural safeguards.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer4#Organization"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:accreditation"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer4#Auditor">
+        <rdfs:label>Auditor</rdfs:label>
+        <rdfs:comment>The party responsible for performing an audit. Typically an auditor must be accredited.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:auditor"/>
+    </owl:Class>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Relation ************ -->
+    <!-- ******************************* -->
+
+    <owl:ObjectProperty rdf:about="govLayer4#maintainsMemberDirectory">
+        <rdfs:domain rdf:resource="techLayer4#TrustCommunity"/>
+        <rdfs:range rdf:resource="govLayer4#MemberDirectory"/>
+        <rdfs:label>maintains</rdfs:label>
+        <rdfs:comment>A digital ecosystem in which the participants are one or more interoperating trust communities. Governance of the various roles of governed parties within a digital trust ecosystem (e.g., issuers, holders, verifiers, certification bodies, auditors) is typically managed by a governing body using a governance framework as recommended in the ToIP Governance Stack. Many digital trust ecosystems will also maintain one or more trust lists and/or trust registries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:digital-trust-ecosystem"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="techLayer4#memberOfTrustCommunity">
+        <rdfs:domain rdf:resource="techLayer4#Entity"/>
+        <rdfs:range rdf:resource="techLayer4#TrustCommunity"/>
+        <rdfs:label>member</rdfs:label>
+    </owl:ObjectProperty>
+
+
+
+    <!-- ******************************* -->
+    <!-- ********* Attribute *********** -->
+    <!-- ******************************* -->
+     
+
+
+    <!-- ******************************* -->
+    <!-- * Connection with other Layer * -->
+    <!-- ******************************* -->
+
+     <owl:Class rdf:about="techLayer4#TrustCommunity">
+          <rdfs:label>Trust community</rdfs:label>
+          <rdfs:comment>A set of parties who collaborate to achieve a mutual set of trust objectives.</rdfs:comment>
+          <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-community"/>
+     </owl:Class>
+     
+
+
+    <!-- ******************************* -->
+    <!-- ********* Instance ************ -->
+    <!-- ******************************* -->
+
+
+
+</rdf:RDF>
