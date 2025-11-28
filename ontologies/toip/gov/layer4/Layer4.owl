@@ -11,6 +11,7 @@
     <!-- ********************************************************************************************* -->
     <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
     <!-- ************************* Gov layer 4 of the ToIP model ************************************* -->
+    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
     <!-- ********************************************************************************************* -->
 
     <owl:Ontology rdf:about="http://example.org/govLayer4#">
@@ -23,6 +24,14 @@
     <!-- ********* Class *************** -->
     <!-- ******************************* -->
 
+    <owl:Class rdf:about="govLayer4#MemberDirectory">
+        <rdfs:label>Member directory</rdfs:label>
+        <rdfs:comment>A one-dimensional trust graph in which an authoritative source publishes a list of entities that are trusted in a specific trust context. A trust list can be considered a simplified form of a trust registry.</rdfs:comment>
+        <owl:equivalentClass rdf:resource="techLayer1#TrustRegistry"/>
+        <owl:equivalentClass rdf:resource="techLayer1#TrustList"/>
+        <owl:equivalentClass rdf:resource="techLayer1#Registry"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-registry"/>
+    </owl:Class>
 
     <owl:Class rdf:about="govLayer4#AccreditingAuthority">
         <rdfs:label>Accrediting authority</rdfs:label>
@@ -42,6 +51,30 @@
     <!-- ******************************* -->
     <!-- ********* Relation ************ -->
     <!-- ******************************* -->
+
+    <owl:ObjectProperty rdf:about="govLayer4#leveragesRiskLevel">
+        <rdfs:domain rdf:resource="govLayer4#Auditor"/>
+        <rdfs:range rdf:resource="govLayer3#RiskLevel"/>
+        <rdfs:label>leverages</rdfs:label>
+        <rdfs:comment>Formal declaration by an accrediting authority that an information system is approved to operate at an acceptable level of risk, based on the implementation of an approved set of technical, managerial, and procedural safeguards.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:accreditation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="govLayer4#accreditsAuditor">
+        <rdfs:domain rdf:resource="govLayer4#AccreditingAuthority"/>
+        <rdfs:range rdf:resource="govLayer4#Auditor"/>
+        <rdfs:label>accredits</rdfs:label>
+        <rdfs:comment>Formal declaration by an accrediting authority that an information system is approved to operate at an acceptable level of risk, based on the implementation of an approved set of technical, managerial, and procedural safeguards.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:accreditation"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="govLayer4#auditsEntity">
+        <rdfs:domain rdf:resource="govLayer4#Auditor"/>
+        <rdfs:range rdf:resource="techLayer4#Entity"/>
+        <rdfs:label>audits</rdfs:label>
+        <rdfs:comment>Independent review and examination of records and activities to assess the adequacy of system controls, to ensure compliance with established policies and operational procedures.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:audit"/>
+    </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="govLayer4#maintainsMemberDirectory">
         <rdfs:domain rdf:resource="techLayer4#TrustCommunity"/>
@@ -69,12 +102,31 @@
     <!-- * Connection with other Layer * -->
     <!-- ******************************* -->
 
+    <owl:Class rdf:about="techLayer4#Organization">
+        <rdfs:label>Organization</rdfs:label>
+        <rdfs:comment>A party that consists of a group of parties who agree to be organized into a specific form in order to better achieve a common set of objectives. Examples include corporations, partnerships, sole proprietorships, non-profit organizations, associations, and governments.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer4#Party"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:organizations"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="techLayer4#Party">
+        <rdfs:label>Party</rdfs:label>
+        <rdfs:comment>An entity that sets its objectives, maintains its knowledge, and uses that knowledge to pursue its objectives in an autonomous (sovereign) manner. Natural persons and organizations are the typical examples.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer4#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:party"/>
+    </owl:Class>
+
      <owl:Class rdf:about="techLayer4#TrustCommunity">
           <rdfs:label>Trust community</rdfs:label>
           <rdfs:comment>A set of parties who collaborate to achieve a mutual set of trust objectives.</rdfs:comment>
           <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:trust-community"/>
      </owl:Class>
-     
+
+    <owl:Class rdf:about="govLayer3#RiskLevel">
+        <rdfs:label>Risk level</rdfs:label>
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+
 
 
     <!-- ******************************* -->
