@@ -11,6 +11,7 @@
     <!-- ********************************************************************************************* -->
     <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
     <!-- ************************* Gov layer 1 of the ToIP model ************************************* -->
+    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
     <!-- ********************************************************************************************* -->
 
     <owl:Ontology rdf:about="http://example.org/govLayer1#">
@@ -23,12 +24,11 @@
     <!-- ********* Class *************** -->
     <!-- ******************************* -->
 
-
-    <owl:Class rdf:about="govLayer1#HardwareManufacturer">
-        <rdfs:label>Hardware manufacturer</rdfs:label>
-        <rdfs:comment>A business or company which makes goods in large quantities to sell.</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="govLayer1#TechnologyProvider"/>
-        <rdfs:isDefinedBy rdf:resource="https://www.collinsdictionary.com/dictionary/english/hardware-manufacturer"/>
+    <owl:Class rdf:about="govLayer1#StandardsOrganization">
+        <rdfs:label>Standards organization</rdfs:label>
+        <rdfs:comment>A standards organization, standards body, standards developing organization (SDO), or standards setting organization is an organization whose primary function is developing, coordinating, promulgating, revising, amending, reissuing, interpreting, or otherwise contributing to the usefulness of technical standards to those who employ them.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer4#Organization"/>
+        <rdfs:isDefinedBy rdf:resource="https://en.wikipedia.org/wiki/Standards_organization"/>
     </owl:Class>
 
     <owl:Class rdf:about="govLayer1#TechnologyProvider">
@@ -38,12 +38,71 @@
         <rdfs:isDefinedBy rdf:resource="https://enterprise-architecture.org/university/defining-technology-providers/"/>
     </owl:Class>
 
+    <owl:Class rdf:about="govLayer1#HardwareManufacturer">
+        <rdfs:label>Hardware manufacturer</rdfs:label>
+        <rdfs:comment>A business or company which makes goods in large quantities to sell.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.collinsdictionary.com/dictionary/english/hardware-manufacturer"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#SoftwarePublisher">
+        <rdfs:label>Software publisher</rdfs:label>
+        <rdfs:comment>A software publisher is a publishing company in the software industry between the developer and the distributor. In some companies, two or all three of these roles may be combined (and indeed, may reside in a single person, especially in the case of shareware).</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:isDefinedBy rdf:resource="https://en.wikipedia.org/wiki/Software_publisher"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#CertificateAuthority">
+        <rdfs:label>Certificate authority</rdfs:label>
+        <rdfs:comment>The entity in a public key infrastructure (PKI) that is responsible for issuing public key certificates and exacting compliance to a PKI policy.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="governance#AdministeringAuthority"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:certificate-authority"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#NetworkAuthority">
+        <rdfs:label>Network authority / Root authority</rdfs:label>
+        <rdfs:comment>The main entity of trust that authorizes the other nodes in the network. It is part of the technical governance; it manages the infrastructure and partecipates in the consensus process.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="governance#GoverningAuthority"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:certificate-authority"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#TechnologyProvider">
+        <rdfs:label>Technology provider</rdfs:label>
+        <rdfs:comment>Technology Providers are those things that implement the Technology Components. They are either Products (that you can buy, download, etc.) or they are configurations of other products in particular technical architectures, in which case they are called Technology Product Builds.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer4#Organization"/>
+        <rdfs:isDefinedBy rdf:resource="https://enterprise-architecture.org/university/defining-technology-providers/"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#TechnicalStandard">
+        <rdfs:label>Technical standard</rdfs:label>
+        <rdfs:comment>A technical standard is an established norm or requirement for a repeatable technical task which is applied to a common and repeated use of rules, conditions, guidelines or characteristics for products or related processes and production methods, and related management systems practices.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://en.wikipedia.org/wiki/Technical_standard"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#Validator">
+        <rdfs:label>Validator</rdfs:label>
+        <rdfs:comment>Validator nodes run the Plenum consensus protocol to validate new Sovrin transactions. Every “write” to the Sovrin ledger must be sent to a validator node. In the early days of the Sovrin network, all nodes will be validators, since they will be able to handle both the read and write load of the network.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://sovrin.org/wp-content/uploads/2018/03/The-Technical-Foundations-of-Sovrin.pdf"/>
+    </owl:Class>
 
 
 
     <!-- ******************************* -->
     <!-- ********* Relation ************ -->
     <!-- ******************************* -->
+
+    <owl:ObjectProperty rdf:about="govLayer1#providesTechnicalStandard">
+        <rdfs:domain rdf:resource="govLayer1#StandardsOrganization"/>
+        <rdfs:range rdf:resource="govLayer1#TechnicalStandard"/>
+        <rdfs:label>provides</rdfs:label>
+        <rdfs:comment>The standards organization provides technical standards.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="govLayer1#governsValidator">
+        <rdfs:domain rdf:resource="govLayer1#NetworkAuthority"/>
+        <rdfs:range rdf:resource="govLayer1#Validator"/>
+        <rdfs:label>governs</rdfs:label>
+    </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="govLayer1#adoptsTechnicalStandard">
         <rdfs:domain rdf:resource="govLayer1#TechnologyProvider"/>
@@ -57,6 +116,22 @@
         <rdfs:range rdf:resource="techLayer1#DigitalTrustUtility"/>
         <rdfs:label>develops</rdfs:label>
         <rdfs:comment>The technology provider develops digital trust utilities.</rdfs:comment>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="govLayer1#signsMetadata">
+        <rdfs:domain rdf:resource="govLayer1#CertificateAuthority"/>
+        <rdfs:range rdf:resource="techLayer1#Metadata"/>
+        <rdfs:label>signs</rdfs:label>
+        <rdfs:comment>A set of data that uniquely identifies a public key (which has a corresponding private key) and an owner that is authorized to use the key pair. The certificate contains the owner's public key and possibly other information and is digitally signed by a certification authority (i.e., a trusted party), thereby binding the public key to the owner.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:public-key-certificate"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="govLayer1#governsRegistry">
+        <rdfs:domain rdf:resource="governance#GoverningAuthority"/>
+        <rdfs:range rdf:resource="techLayer1#Registry"/>
+        <rdfs:label>governs</rdfs:label>
+        <rdfs:comment>The governing authority governs trust registries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://ayra.forum/wp-content/uploads/2025/01/Ayra-Technical-Whitepaper-v0.0.10.pdf"/>
     </owl:ObjectProperty>
 
     <owl:ObjectProperty rdf:about="govLayer1#runsGovernanceFramework">
@@ -105,6 +180,34 @@
         <rdfs:comment>A legal entity delegated by a governing body to administer the operation of a governance framework and governed infrastructure for a digital trust ecosystem, such as one or more trust registries.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="techLayer4#Entity"/>
         <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:administering-authority"/>
+    </owl:Class>
+
+    <owl:ObjectProperty rdf:about="governance#delegatesAdministeringAuthority">
+        <rdfs:domain rdf:resource="governance#GoverningAuthority"/>
+        <rdfs:range rdf:resource="governance#AdministeringAuthority"/>
+        <rdfs:label>delegates</rdfs:label>
+        <rdfs:comment>A governing body may also delegate operational responsibilities to an administering body.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governing-authority"/>
+    </owl:ObjectProperty>
+
+    <owl:Class rdf:about="techLayer1#Registry">
+        <rdfs:label>Registry</rdfs:label>
+        <rdfs:comment>A specialized database of records that serves as an authoritative source of information about entities.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer1#DigitalTrustUtility"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:registry"/>
+    </owl:Class>
+    
+    <owl:Class rdf:about="governance#GovernanceDocument">
+        <rdfs:label>Governance document</rdfs:label>
+        <rdfs:comment>A document with at least one identifier that specifies governance requirements for a trust community. Note: A governance document is a component of a governance framework.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="governance#GovernanceFramework"/>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-document"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="governance#GovernanceFramework">
+        <rdfs:label>Governance framework</rdfs:label>
+        <rdfs:comment>A collection of one or more governance documents published by the governing body of a trust community.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:governance-framework"/>
     </owl:Class>
 
 
