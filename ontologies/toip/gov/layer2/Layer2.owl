@@ -11,6 +11,7 @@
     <!-- ********************************************************************************************* -->
     <!-- *******************  All rights reserved to Cristian Lepore ********************************* -->
     <!-- ************************* Gov layer 2 of the ToIP model ************************************* -->
+    <!-- ******** Definitions comes from the ToIP Glossary: https://glossary.trustoverip.org/ ******** -->
     <!-- ********************************************************************************************* -->
 
     <owl:Ontology rdf:about="http://example.org/govLayer2#">
@@ -44,6 +45,12 @@
         <rdfs:comment>The technology provider provides hardware and software for the user agent.</rdfs:comment>
     </owl:ObjectProperty>
 
+    <owl:ObjectProperty rdf:about="govLayer2#providesTrustedCommunicationProtocol">
+        <rdfs:domain rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:range rdf:resource="techLayer2#TrustedCommunicationProtocol"/>
+        <rdfs:label>provides</rdfs:label>
+        <rdfs:comment>The technology provider provides hardware and software for the communication protocol.</rdfs:comment>
+    </owl:ObjectProperty>
 
 
     <!-- ******************************* -->
@@ -63,6 +70,27 @@
     <!-- * Connection with other Layer * -->
     <!-- ******************************* -->
 
+    <owl:Class rdf:about="govLayer1#TechnologyProvider">
+        <rdfs:label>Technology provider</rdfs:label>
+        <rdfs:comment>Technology Providers are those things that implement the Technology Components. They are either Products (that you can buy, download, etc.) or they are configurations of other products in particular technical architectures, in which case they are called Technology Product Builds.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="techLayer4#Organization"/>
+        <rdfs:isDefinedBy rdf:resource="https://enterprise-architecture.org/university/defining-technology-providers/"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#HardwareManufacturer">
+        <rdfs:label>Hardware manufacturer</rdfs:label>
+        <rdfs:comment>A business or company which makes goods in large quantities to sell.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:isDefinedBy rdf:resource="https://www.collinsdictionary.com/dictionary/english/hardware-manufacturer"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#SoftwarePublisher">
+        <rdfs:label>Software publisher</rdfs:label>
+        <rdfs:comment>A software publisher is a publishing company in the software industry between the developer and the distributor. In some companies, two or all three of these roles may be combined (and indeed, may reside in a single person, especially in the case of shareware).</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="govLayer1#TechnologyProvider"/>
+        <rdfs:isDefinedBy rdf:resource="https://en.wikipedia.org/wiki/Software_publisher"/>
+    </owl:Class>
+
     <owl:Class rdf:about="techLayer2#UserAgent">
         <rdfs:label>User Agent</rdfs:label>
         <rdfs:comment>A software agent that is used directly by the end-user as the principal. Browsers, email clients, and digital wallets are all examples of user agents. Even the DWN is a user agent.</rdfs:comment>
@@ -73,6 +101,12 @@
         <rdfs:label>Trusted Communication Protocol</rdfs:label>
         <rdfs:comment>The ToIP Trust Spanning Protocol (TSP) is the ToIP Layer 2 protocol for verifiable messaging that implements the trust spanning layer of the ToIP stack.  The TSP enables actors in different digital trust domains to interact in a similar way to how the Internet Protocol (IP) enables devices on different local area networks to exchange data.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="https://glossary.trustoverip.org/#term:toip-trust-spanning-protocol"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="govLayer1#TechnicalStandard">
+        <rdfs:label>Technical standard</rdfs:label>
+        <rdfs:comment>A technical standard is an established norm or requirement for a repeatable technical task which is applied to a common and repeated use of rules, conditions, guidelines or characteristics for products or related processes and production methods, and related management systems practices.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://en.wikipedia.org/wiki/Technical_standard"/>
     </owl:Class>
 
 
